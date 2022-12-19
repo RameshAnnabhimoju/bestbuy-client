@@ -1,0 +1,9 @@
+.login-button{
+    width: 100px;
+    text-align: center;
+}
+.login-footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+}

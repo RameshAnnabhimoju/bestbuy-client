@@ -1,0 +1,19 @@
+.payments-background{
+    background-color:rgb(245, 243, 243);
+}
+.payments-container{
+    background-color: white;
+    margin: auto;
+    min-height: 88vh;
+    width: 70%;
+    padding: 25px 25px;
+
+}
+.payments-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+.payments-card{
+    text-align: center;
+}

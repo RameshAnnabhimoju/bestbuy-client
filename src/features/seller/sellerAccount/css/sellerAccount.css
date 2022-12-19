@@ -1,0 +1,19 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    
+}
+.sellerAccount-container{
+    min-height: 88vh;
+    width: 60%;
+    margin: 25px auto;
+    background-color: white;
+    padding: 25px 25px;
+}
+.sellerAccount-background{
+    background-color:rgb(245, 243, 243);
+
+}
+.nav-link{
+    text-align: center;
+}

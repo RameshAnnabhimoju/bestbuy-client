@@ -1,0 +1,48 @@
+.order-filters{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 25px;
+}
+.refund-request{
+    margin-right: 15px;
+}
+.order-status-active{
+    background-color: #756de9;
+    text-align: center;
+    color: white;
+    border: 0 ;
+    border-radius: 5px;
+    width: 100px;
+}
+.order-status-refund{
+    background-color: #e96d6d;
+    text-align: center;
+    color: white;
+    border: 0 ;
+    border-radius: 5px;
+    width: 100px;
+}
+.order-status-shipped{
+    background-color: #EAB941;
+    text-align: center;
+    color: white;
+    border: 0 ;
+    border-radius: 5px;
+    width: 100px;
+
+}
+.order-status-delivered{
+    background-color: #4DC374;
+    text-align: center;
+    color: white;
+    border: 0 ;
+    border-radius: 5px;
+    width: 100px;
+
+}
+.order-card{
+    width: 100%;
+}
+.title-column{
+    max-width: 300px;
+}

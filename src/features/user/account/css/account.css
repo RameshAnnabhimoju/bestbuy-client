@@ -1,0 +1,24 @@
+.account-container{
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    min-height: 88vh;
+}
+.account-container-background{
+    background-color:rgb(245, 243, 243);
+}
+.account-options{
+    width: 100%;
+}
+.profile-name{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+}
+.account-edit{
+    width: 25px;
+    height: 25px;
+}
+.profile-header{
+    display: flex;
+}

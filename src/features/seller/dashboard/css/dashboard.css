@@ -1,0 +1,25 @@
+.dashboard-background{
+    background-color:rgb(245, 243, 243);
+}
+.dashboard-container{
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    min-height: 88vh;
+    padding: 25px 25px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.dashboard-card{
+    max-width: 90%;
+    max-height: 7rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.dashboard-text{
+    color: rgb(146, 146, 146);
+}
+.dashboard-chart{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}

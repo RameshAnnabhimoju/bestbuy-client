@@ -1,0 +1,35 @@
+.seller-login-container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+.left-container{
+    background-color: rgb(235, 237, 239);
+    text-align: center;
+    padding: 20% 0;
+}
+.right-container{
+    padding: 35px;
+}
+.seller-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.seller-login-button{
+    width: 150px;
+}
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon{
+    width: 5rem !important;
+   height: 5rem !important;
+}
+.title{
+    font-size: 5rem;
+    margin-bottom: 5%;
+}
+.description{
+    margin-top: 2%;
+}

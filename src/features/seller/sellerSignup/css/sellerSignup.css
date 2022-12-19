@@ -1,0 +1,23 @@
+.sellerSignup-background{
+    background-color:rgb(245, 243, 243);
+}
+.sellerSignup-container{
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    min-height: 88vh;
+    padding: 25px 25px;
+}
+.seller-signup-tabs{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+.helper-text{
+    color: rgba(200, 1, 1, 0.64);
+    padding-top: 5px;
+    font-size: smaller;
+    font-weight: bold;
+}
+.button{
+}
