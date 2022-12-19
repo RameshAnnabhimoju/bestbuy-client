@@ -31,11 +31,23 @@ function MobileFilters() {
         ...mobileFiltervalues,
         [name]: [...mobileFiltervalues[name], title],
       });
+      const query = new URLSearchParams({
+        ...items.filters,
+        ...mobileFiltervalues,
+        [name]: [...mobileFiltervalues[name], title],
+      }).toString();
+      dispatch(fetchItemsByfilter(query));
     } else {
       setMobileFilterValues({
         ...mobileFiltervalues,
         [name]: mobileFiltervalues[name].filter((data) => data !== title),
       });
+      const query = new URLSearchParams({
+        ...items.filters,
+        ...mobileFiltervalues,
+        [name]: mobileFiltervalues[name].filter((data) => data !== title),
+      }).toString();
+      dispatch(fetchItemsByfilter(query));
     }
   }
 
