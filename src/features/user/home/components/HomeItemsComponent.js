@@ -43,7 +43,7 @@ export default function Homepage() {
   const audioItems = items.itemData.homeItems?.audioHomeItems
     ? items.itemData.homeItems?.audioHomeItems
     : [];
-  const url = "http://localhost:8080/";
+  const url = "https://bestbuy-server.vercel.app/";
   function seeAllHandler(e) {
     const { name } = e.target;
     console.log(name);

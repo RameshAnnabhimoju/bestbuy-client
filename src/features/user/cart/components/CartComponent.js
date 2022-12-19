@@ -25,7 +25,7 @@ import { createOrder } from "../../../api/orderSlice";
 function CartComponent() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  const IMGURL = "http://localhost:8080/";
+  const IMGURL = "https://bestbuy-server.vercel.app/";
   const dispatch = useDispatch();
   useEffect(() => {
     if (user.userData?.auth) {

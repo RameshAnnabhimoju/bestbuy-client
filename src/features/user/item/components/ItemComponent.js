@@ -10,7 +10,7 @@ import Login from "../../login/LoginContainer";
 import ReactStars from "react-stars";
 export default function ItemDetails() {
   const [loginVisible, setLoginVisible] = useState(false);
-  const IMGURL = "http://localhost:8080/";
+  const IMGURL = "https://bestbuy-server.vercel.app/";
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {

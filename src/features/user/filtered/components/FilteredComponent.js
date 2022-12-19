@@ -20,7 +20,7 @@ import {
 function FilteredComponent() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const url = "http://localhost:8080/";
+  const url = "https://bestbuy-server.vercel.app/";
   const initialFilter = "";
   const items = useSelector((state) => state.item);
   const [category, setCategory] = useState(initialFilter);
