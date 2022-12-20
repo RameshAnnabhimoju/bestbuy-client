@@ -8,9 +8,9 @@ import { addToCart } from "../../../api/cartSlice";
 import { CImage, CButton } from "@coreui/react";
 import Login from "../../login/LoginContainer";
 import ReactStars from "react-stars";
+import axios from "../../../api/axios";
 export default function ItemDetails() {
   const [loginVisible, setLoginVisible] = useState(false);
-  const IMGURL = "https://bestbuy-server.vercel.app/";
   const dispatch = useDispatch();
   const { id } = useParams();
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function ItemDetails() {
             className="item-image"
             rounded
             thumbnail
-            src={IMGURL + items.item.image}
+            src={axios.defaults.baseURL + items.item.image}
             width={200}
             height={300}
           />

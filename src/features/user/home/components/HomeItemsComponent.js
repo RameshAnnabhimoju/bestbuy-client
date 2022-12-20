@@ -7,7 +7,7 @@ import {
   clearFilters,
 } from "../../../api/itemSlice";
 import { useNavigate } from "react-router-dom";
-
+import axios from "../../../api/axios";
 import {
   CCard,
   CCardImage,
@@ -43,7 +43,6 @@ export default function Homepage() {
   const audioItems = items.itemData.homeItems?.audioHomeItems
     ? items.itemData.homeItems?.audioHomeItems
     : [];
-  const url = "https://bestbuy-server.vercel.app/";
   function seeAllHandler(e) {
     const { name } = e.target;
     console.log(name);
@@ -93,7 +92,7 @@ export default function Homepage() {
                 >
                   <CCardImage
                     orientation="top"
-                    src={url + data.image}
+                    src={axios.defaults.baseURL + data.image}
                     className="image"
                     id={data._id}
                   />

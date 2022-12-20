@@ -9,6 +9,7 @@ import WatchFilters from "./WatchFilters";
 import filterIcon from "../../../../assets/filters.png";
 import FilterCategoryComponent from "./FilterCategoryComponent";
 import { fetchItemsByfilter } from "../../../api/itemSlice";
+import axios from "../../../api/axios";
 import {
   CCard,
   CCardImage,
@@ -20,7 +21,6 @@ import {
 function FilteredComponent() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const url = "https://bestbuy-server.vercel.app/";
   const initialFilter = "";
   const items = useSelector((state) => state.item);
   const [category, setCategory] = useState(initialFilter);
@@ -63,7 +63,7 @@ function FilteredComponent() {
               >
                 <CCardImage
                   orientation="top"
-                  src={url + data.image}
+                  src={axios.defaults.baseURL + data.image}
                   className="image"
                   id={data._id}
                 />
