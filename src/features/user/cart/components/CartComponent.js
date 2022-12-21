@@ -14,6 +14,7 @@ import {
 import "../css/cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartVisibleToggle } from "../../../api/cartSlice";
+import axios from "../../../api/axios";
 import {
   getCartItems,
   updateCartItem,
@@ -25,11 +26,10 @@ import { createOrder } from "../../../api/orderSlice";
 function CartComponent() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  const IMGURL = "https://bestbuy-server.vercel.app/";
   const dispatch = useDispatch();
   useEffect(() => {
-    if (user.userData?.auth) {
-      dispatch(getCartItems(user.userData._id));
+    if (user.userData?.auth && !cart.loading) {
+      dispatch(getCartItems(user.userData.user._id));
     }
   }, []);
   let subTotal = 0;
@@ -48,7 +48,7 @@ function CartComponent() {
           updateCartItem({
             id: id,
             payload: quantity + 1,
-            user: user.userData._id,
+            user: user.userData.user._id,
           })
         );
         break;
@@ -58,7 +58,7 @@ function CartComponent() {
             updateCartItem({
               id: id,
               payload: quantity - 1,
-              user: user.userData._id,
+              user: user.userData.user._id,
             })
           );
         }
@@ -68,14 +68,14 @@ function CartComponent() {
     }
   }
   function removeCartItemHandler(id) {
-    dispatch(removeCartItem({ id: id, user: user.userData._id }));
+    dispatch(removeCartItem({ id: id, user: user.userData.user._id }));
   }
   function clearCartHandler() {
-    dispatch(clearCart(user.userData._id));
+    dispatch(clearCart(user.userData.user._id));
   }
   function checkoutHandler() {
     dispatch(createOrder(cart.cartItems));
-    dispatch(clearCart(user.userData._id));
+    dispatch(clearCart(user.userData.user._id));
   }
   function toggleCartVisible() {
     dispatch(cartVisibleToggle(false));
@@ -104,7 +104,7 @@ function CartComponent() {
                       <div>
                         <img
                           className="cart-image"
-                          src={IMGURL + item.image}
+                          src={axios.defaults.baseURL + item.image}
                           alt=""
                         />
                       </div>

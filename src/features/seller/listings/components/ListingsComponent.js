@@ -54,7 +54,7 @@ function ListingsComponent() {
           <CCard className="mn-3 border-top-primary dashboard-card">
             <CCardHeader>Total Listings</CCardHeader>
             <CCardTitle>
-              ₹ {seller.sellerData?.displayDetails?.totalListings}
+              {seller.sellerData?.displayDetails?.totalListings}
             </CCardTitle>
             <CCardText className="dashboard-text">this month</CCardText>
           </CCard>
@@ -68,7 +68,7 @@ function ListingsComponent() {
           <CCard className="mn-3 border-top-primary dashboard-card">
             <CCardHeader>Low Stock Listings</CCardHeader>
             <CCardTitle>
-              ₹ {seller.sellerData?.displayDetails?.lowStockListings}
+              {seller.sellerData?.displayDetails?.lowStockListings}
             </CCardTitle>
             <CCardText className="dashboard-text">this month</CCardText>
           </CCard>
@@ -137,22 +137,23 @@ function ListingsComponent() {
 
           <CTableBody>
             <>
-              {items.itemData?.map((item) => {
-                return (
-                  <CTableRow key={item._id}>
-                    <CTableDataCell className="name-cell">
-                      {item.title}
-                    </CTableDataCell>
-                    <CTableDataCell>{item._id}</CTableDataCell>
-                    <CTableDataCell>{item.category}</CTableDataCell>
-                    <CTableDataCell>{item.listingPrice}</CTableDataCell>
-                    <CTableDataCell>{item.actualprice}</CTableDataCell>
-                    <CTableDataCell>{item.stock}</CTableDataCell>
-                    <CTableDataCell>{item.unitsSold}</CTableDataCell>
-                    <CTableDataCell>{item.unitsRefunded}</CTableDataCell>
-                  </CTableRow>
-                );
-              })}
+              {items.itemData?.data &&
+                items.itemData?.data?.map((item) => {
+                  return (
+                    <CTableRow key={item._id}>
+                      <CTableDataCell className="name-cell">
+                        {item.title}
+                      </CTableDataCell>
+                      <CTableDataCell>{item._id}</CTableDataCell>
+                      <CTableDataCell>{item.category}</CTableDataCell>
+                      <CTableDataCell>{item.listingPrice}</CTableDataCell>
+                      <CTableDataCell>{item.actualprice}</CTableDataCell>
+                      <CTableDataCell>{item.stock}</CTableDataCell>
+                      <CTableDataCell>{item.unitsSold}</CTableDataCell>
+                      <CTableDataCell>{item.unitsRefunded}</CTableDataCell>
+                    </CTableRow>
+                  );
+                })}
             </>
           </CTableBody>
         </CTable>

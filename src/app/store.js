@@ -18,6 +18,7 @@ const persistConfig = {
   key: "bestbuy",
   version: 1,
   storage,
+  timeout: null,
 };
 const sellerPersistedReducer = persistReducer(persistConfig, sellerReducer);
 const orderPersistedReducer = persistReducer(persistConfig, orderReducer);

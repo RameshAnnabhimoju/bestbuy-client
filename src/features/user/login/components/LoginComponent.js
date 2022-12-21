@@ -38,7 +38,7 @@ function LoginComponent({ visible, setVisible }) {
     if (window.location.pathname === "/signup") {
       navigate("/");
     }
-  }, [user.errors]);
+  }, [user.userData]);
   return (
     <>
       <CModal

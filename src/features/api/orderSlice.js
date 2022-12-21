@@ -32,7 +32,7 @@ export const updateOrderStatus = createAsyncThunk(
   "order/updateOrderStatus",
   async (value, { rejectWithValue }) => {
     try {
-      await axios.patch("/order/update" + value.id, {
+      await axios.patch("/order/update/" + value.id, {
         orderStatus: value.payload,
       });
     } catch (error) {
@@ -89,6 +89,20 @@ const orderSlice = createSlice({
       state.errors = "";
     });
     builder.addCase(getOrder.rejected, (state, action) => {
+      state.loading = false;
+      state.orderData = [];
+      state.errors = { ...action.payload };
+    });
+
+    builder.addCase(fetchOrdersByfilter.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchOrdersByfilter.fulfilled, (state, action) => {
+      state.loading = false;
+      state.orderData = action.payload;
+      state.errors = "";
+    });
+    builder.addCase(fetchOrdersByfilter.rejected, (state, action) => {
       state.loading = false;
       state.orderData = [];
       state.errors = { ...action.payload };

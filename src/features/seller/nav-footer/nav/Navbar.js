@@ -2,7 +2,7 @@ import userIcon from "../../../../assets/user.png";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { fetchItemListings } from "../../../api/itemSlice";
-import { fetchOrdersByfilter } from "../../../api/orderSlice";
+import { getOrder } from "../../../api/orderSlice";
 import { logout } from "../../../api/sellerSlice";
 import "./navbar.css";
 import {
@@ -26,7 +26,7 @@ export default function Navbar() {
   }
   const navDispatchLinks = {
     listings: fetchItemListings(seller.sellerData.seller._id),
-    orders: fetchOrdersByfilter(seller.sellerData.seller._id),
+    orders: getOrder(seller.sellerData.seller._id),
   };
   function navApiDispatchHandler(e) {
     const { name } = e.target;

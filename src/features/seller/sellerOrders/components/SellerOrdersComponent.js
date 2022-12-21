@@ -22,6 +22,8 @@ import searchIcon from "../../../../assets/search.png";
 
 function SellerOrdersComponent() {
   const searchInputId = useRef();
+  const orderStatus = useRef();
+
   const seller = useSelector((state) => state.seller);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,6 +34,8 @@ function SellerOrdersComponent() {
   const [orderId, setOrderId] = useState("");
   function refreshOrders() {
     dispatch(getOrder(seller.sellerData.seller._id));
+    searchInputId.current.value = "";
+    orderStatus.current.value = "Sort By status";
   }
   const orderStatusArr = ["active", "shipped", "delivered", "refund"];
   const orderStatusObj = { active: 0, shipped: 1, delivered: 2, refund: 3 };
@@ -48,6 +52,7 @@ function SellerOrdersComponent() {
         payload: orderStatusArr[statusNumber],
       })
     );
+    // console.log(id, orderStatusArr[statusNumber]);
   }
   function searchOrdersById() {
     const query = new URLSearchParams({
@@ -58,7 +63,7 @@ function SellerOrdersComponent() {
   function changeHandler(e) {
     const query = new URLSearchParams({
       _id: searchInputId.current.value || "",
-      category: e.target.value,
+      orderStatus: e.target.value,
     }).toString();
     dispatch(fetchOrdersByfilter(query));
   }
@@ -86,7 +91,7 @@ function SellerOrdersComponent() {
             </CButton>
           </CInputGroup>
 
-          <CFormSelect onChange={changeHandler}>
+          <CFormSelect onChange={changeHandler} ref={orderStatus}>
             <option>Sort By status</option>
             <option value="active">Active</option>
             <option value="shipped">Shipped</option>

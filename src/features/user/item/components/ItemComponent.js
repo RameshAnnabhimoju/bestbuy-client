@@ -34,7 +34,7 @@ export default function ItemDetails() {
           quantity: 1,
           total: items.item.listingPrice,
           itemId: items.item._id,
-          user: user.userData._id,
+          user: user.userData.user._id,
         })
       );
     } else {
@@ -42,7 +42,7 @@ export default function ItemDetails() {
     }
   }
   function addToCartHandler() {
-    if (user.userDate?.user?._id) {
+    if (user.userData?.user?._id) {
       dispatch(
         addToCart({
           image: items.item.image,
@@ -54,7 +54,7 @@ export default function ItemDetails() {
           quantity: 1,
           total: items.item.listingPrice,
           itemId: items.item._id,
-          user: user.userData._id,
+          user: user.userData.user._id,
         })
       );
       dispatch(cartVisibleToggle(true));
