@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://bestbuy-server.vercel.app/",
+  // baseURL: "http://localhost:8080",
+  baseURL: "https://bestbuy-server.vercel.app",
   headers: {
     "Access-Control-Allow-Origin": "https://bestbuy-client.vercel.app",
     // "Access-Control-Allow-Origin": "http://localhost:3000",
